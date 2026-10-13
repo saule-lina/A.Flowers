@@ -1,0 +1,28 @@
+.group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.row {
+  align-items: center;
+}
+.stack {
+  flex-direction: column;
+  align-items: stretch;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.grid .primary {
+  grid-column: 1 / -1;
+}
+.primary {
+  padding-inline: 32px;
+}
+@media (max-width: 767px) {
+  .row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

@@ -1,0 +1,62 @@
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-bg);
+  overflow: hidden;
+  pointer-events: none;
+  background: var(--c-wine);
+}
+.blob {
+  position: absolute;
+  width: 70vmax;
+  height: 70vmax;
+  border-radius: 50%;
+  opacity: 0.55;
+  will-change: transform;
+}
+.blobA {
+  left: -25vmax;
+  top: -30vmax;
+  background: radial-gradient(circle closest-side, rgba(117, 26, 35, 0.9) 0%, rgba(117, 26, 35, 0) 100%);
+}
+.blobB {
+  right: -30vmax;
+  top: 10vmax;
+  background: radial-gradient(circle closest-side, rgba(142, 27, 34, 0.55) 0%, rgba(142, 27, 34, 0) 100%);
+}
+.blobC {
+  left: 10vmax;
+  bottom: -40vmax;
+  background: radial-gradient(circle closest-side, rgba(35, 49, 50, 0.7) 0%, rgba(35, 49, 50, 0) 100%);
+}
+.petals {
+  position: absolute;
+  inset: 0;
+}
+.petal {
+  position: absolute;
+  top: 100%;
+  will-change: transform;
+}
+.petal > svg {
+  will-change: transform;
+}
+.rose {
+  color: var(--c-rose);
+}
+.bordeaux {
+  color: var(--c-bordeaux);
+}
+.grain {
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/noise.svg');
+  background-size: 160px;
+  opacity: 0.11;
+  mix-blend-mode: overlay;
+}
+@media (prefers-reduced-motion: reduce) {
+  .petals {
+    display: none;
+  }
+}

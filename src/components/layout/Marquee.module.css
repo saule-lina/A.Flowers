@@ -1,0 +1,47 @@
+.marquee {
+  overflow: hidden;
+  border-top: 1px solid var(--c-line-wine);
+  border-bottom: 1px solid var(--c-line-wine);
+  padding: 14px 0;
+  position: relative;
+  z-index: var(--z-content);
+  color: var(--c-on-wine);
+}
+.cream {
+  border-color: var(--c-line-cream);
+  color: var(--c-ink);
+}
+.track {
+  display: flex;
+  width: max-content;
+  animation: slide 60s linear infinite;
+}
+.row {
+  display: flex;
+  flex: none;
+}
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: 28px;
+  padding-right: 28px;
+  font-family: var(--f-serif);
+  font-size: 1.1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0.8;
+}
+.dot {
+  opacity: 0.5;
+}
+@keyframes slide {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
+}

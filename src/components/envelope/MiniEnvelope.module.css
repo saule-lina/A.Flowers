@@ -1,0 +1,49 @@
+.wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 600 / 420;
+  filter: drop-shadow(0 16px 24px rgba(10, 2, 4, 0.5));
+  animation: breathe 7s ease-in-out infinite;
+}
+@keyframes breathe {
+  50% {
+    transform: translateY(-3px);
+  }
+}
+.body {
+  position: absolute;
+  inset: 0;
+  background: #5c121a;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.face {
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/velvet-tile.jpg');
+  background-size: 200px;
+  background-blend-mode: soft-light;
+}
+.l {
+  clip-path: polygon(0 0, 50% 57%, 0 100%);
+  background-color: #731923;
+}
+.r {
+  clip-path: polygon(100% 0, 50% 57%, 100% 100%);
+  background-color: #6d1720;
+}
+.b {
+  clip-path: polygon(0 100%, 50% 48%, 100% 100%);
+  background-color: #7a1c26;
+}
+.flap {
+  clip-path: polygon(0 0, 100% 0, 50% 60%);
+  background-color: #6a1620;
+}
+.seal {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  width: 30%;
+  transform: translate(-50%, -50%);
+}

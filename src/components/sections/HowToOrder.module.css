@@ -1,0 +1,72 @@
+.section {
+  padding: var(--section-y) 0;
+  border-top: 1px solid var(--c-line-cream);
+}
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 40px);
+  counter-reset: step;
+}
+.step {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  padding-top: 20px;
+  border-top: 1px solid var(--c-line-cream);
+}
+.num {
+  font-family: var(--f-serif);
+  font-size: 2.2rem;
+  line-height: 1;
+  color: var(--c-gold);
+}
+.stepTitle {
+  font-size: 1.5rem;
+}
+.stepText {
+  font-size: var(--fs-small);
+  color: var(--c-ink-2);
+}
+.footer {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: 32px;
+  align-items: center;
+  margin-top: clamp(40px, 6vw, 72px);
+  padding-top: 32px;
+  border-top: 1px solid var(--c-gold);
+}
+.noteBox {
+  display: grid;
+  gap: 10px;
+  max-width: var(--measure);
+}
+.note {
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+.payment {
+  font-size: var(--fs-small);
+  color: var(--c-ink-3);
+}
+.payment span {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: var(--fs-caption);
+}
+@media (max-width: 1023px) {
+  .steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .footer {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 480px) {
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}

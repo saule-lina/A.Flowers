@@ -1,0 +1,76 @@
+/* Дизайн-токены A.FLOWERS. Все цвета, шрифты, радиусы и отступы — здесь. */
+:root {
+  /* Палитра: два мира — винный конверт и кремовая открытка */
+  --c-wine: #3e0a10;          /* винный тёмный фон */
+  --c-wine-deep: #2a060a;     /* ещё глубже, для градиентов и теней */
+  --c-bordeaux: #751a23;      /* бордо конверта клиента */
+  --c-bordeaux-2: #5a1119;    /* бордо в тени */
+  --c-wax: #8e1b22;           /* сургуч */
+  --c-cream: #f3f0da;         /* кремовая открытка */
+  --c-cream-2: #ebe7cf;       /* кремовая бумага, темнее */
+  --c-cream-3: #ddd8b9;       /* линии на кремовом */
+  --c-rose: #e9c3c9;          /* пыльно-розовый ленты */
+  --c-rose-2: #d6a2ac;        /* пыльно-розовый насыщеннее */
+  --c-gold: #b8925a;          /* приглушённое золото печати */
+  --c-gold-2: #d9b77a;        /* золото в блике */
+  --c-teal: #233132;          /* сине-зелёный, редко */
+  --c-ink: #1c1416;           /* почти чёрный */
+  --c-ink-2: #4a3b3e;         /* текст второго плана на кремовом */
+  --c-ink-3: #6f5f62;         /* подписи на кремовом (контраст 5.2:1) */
+  --c-on-wine: var(--c-cream);
+  --c-on-wine-muted: rgba(243, 240, 218, 0.68);
+  --c-line-wine: rgba(243, 240, 218, 0.16);
+  --c-line-cream: rgba(28, 20, 22, 0.14);
+
+  /* Типографика */
+  --f-serif: 'Cormorant Garamond', 'Times New Roman', Georgia, serif;
+  --f-sans: 'Manrope Variable', 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --fs-display: clamp(2.6rem, 6.5vw, 5.4rem);
+  --fs-h2: clamp(2rem, 4.2vw, 3.4rem);
+  --fs-h3: clamp(1.4rem, 2.2vw, 1.9rem);
+  --fs-body: clamp(1rem, 1.05vw, 1.08rem);
+  --fs-small: 0.875rem;
+  --fs-caption: 0.72rem;
+  --ls-caps: 0.18em;
+  --lh-body: 1.65;
+  --measure: 62ch;
+
+  /* Сетка и отступы */
+  --container: 1280px;
+  --gutter: clamp(20px, 5vw, 72px);
+  --section-y: clamp(72px, 10vw, 150px);
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* Формы */
+  --radius-s: 2px;
+  --radius-m: 4px;
+  --radius-pill: 999px;
+  --border: 1px;
+
+  /* Движение */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 220ms;
+  --dur: 420ms;
+  --dur-slow: 900ms;
+
+  /* Тени */
+  --shadow-paper: 0 18px 50px -20px rgba(20, 5, 8, 0.55), 0 2px 6px rgba(20, 5, 8, 0.15);
+  --shadow-card: 0 30px 70px -30px rgba(10, 2, 4, 0.75);
+
+  /* Слои */
+  --z-bg: 0;
+  --z-content: 1;
+  --z-header: 50;
+  --z-sheet: 80;
+  --z-modal: 100;
+  --z-toast: 120;
+}

@@ -1,0 +1,92 @@
+.bar {
+  display: none;
+}
+.backdrop,
+.sheet {
+  display: none;
+}
+@media (max-width: 767px) {
+  .bar {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: var(--z-sheet);
+    padding: 10px var(--gutter) calc(10px + env(safe-area-inset-bottom));
+    background: linear-gradient(180deg, rgba(62, 10, 16, 0) 0%, rgba(62, 10, 16, 0.92) 40%);
+    transform: translateY(110%);
+    transition: transform var(--dur) var(--ease);
+  }
+  .shown {
+    transform: translateY(0);
+  }
+  :global(body.menu-open) .bar {
+    transform: translateY(110%);
+  }
+  .cta {
+    width: 100%;
+    box-shadow: var(--shadow-paper);
+  }
+  .backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: calc(var(--z-sheet) + 1);
+    background: rgba(28, 8, 12, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity var(--dur) var(--ease),
+      visibility 0s linear var(--dur);
+  }
+  .backdrop.open {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity var(--dur) var(--ease);
+  }
+  .sheet {
+    display: grid;
+    gap: 16px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: calc(var(--z-sheet) + 2);
+    padding: 20px var(--gutter) calc(24px + env(safe-area-inset-bottom));
+    background: var(--c-cream);
+    color: var(--c-ink);
+    border-radius: 12px 12px 0 0;
+    transform: translateY(100%);
+    visibility: hidden;
+    transition:
+      transform 0.5s var(--ease-out),
+      visibility 0s linear 0.5s;
+  }
+  .sheet.open {
+    transform: translateY(0);
+    visibility: visible;
+    transition: transform 0.5s var(--ease-out);
+  }
+  .sheetHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+  .sheetTitle {
+    font-family: var(--f-serif);
+    font-size: 1.4rem;
+  }
+  .close {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+  }
+  .hint {
+    font-size: var(--fs-caption);
+    color: var(--c-ink-3);
+    text-align: center;
+  }
+}

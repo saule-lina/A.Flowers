@@ -1,0 +1,114 @@
+.dialog {
+  border: 0;
+  padding: 0;
+  margin: auto;
+  width: min(1080px, 94vw);
+  max-height: min(92vh, 900px);
+  background: var(--c-cream);
+  color: var(--c-ink);
+  box-shadow: var(--shadow-card);
+  overflow: auto;
+}
+.dialog::backdrop {
+  background: rgba(28, 8, 12, 0.72);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+.dialog[open] {
+  animation: pop 0.5s var(--ease-out);
+}
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
+  }
+}
+.inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  position: relative;
+}
+.close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(243, 240, 218, 0.9);
+  color: var(--c-ink);
+  z-index: 2;
+}
+.media {
+  position: relative;
+  background: var(--c-wine-deep);
+}
+.second {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  width: 32%;
+  outline: 6px solid var(--c-cream);
+  box-shadow: var(--shadow-card);
+}
+.body {
+  padding: clamp(28px, 4vw, 56px);
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+.title {
+  font-size: var(--fs-h2);
+}
+.price {
+  font-family: var(--f-serif);
+  font-size: 1.5rem;
+  color: var(--c-bordeaux);
+}
+.why {
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.35;
+}
+.specs {
+  display: grid;
+  gap: 10px;
+  margin: 8px 0;
+  padding: 16px 0;
+  border-top: 1px solid var(--c-line-cream);
+  border-bottom: 1px solid var(--c-line-cream);
+}
+.specs div {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 12px;
+  font-size: var(--fs-small);
+}
+.specs dt {
+  color: var(--c-ink-3);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: var(--fs-caption);
+  padding-top: 2px;
+}
+.specs dd {
+  margin: 0;
+}
+.note {
+  font-size: var(--fs-caption);
+  color: var(--c-ink-3);
+}
+@media (max-width: 767px) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+  .dialog {
+    width: 100vw;
+    max-width: 100vw;
+    max-height: 100dvh;
+    height: 100dvh;
+  }
+}

@@ -1,0 +1,28 @@
+.banner {
+  position: fixed;
+  left: 50%;
+  bottom: calc(16px + env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  z-index: var(--z-sheet);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: min(92vw, 640px);
+  padding: 14px 18px;
+  background: var(--c-cream);
+  color: var(--c-ink);
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-paper);
+  font-size: var(--fs-small);
+}
+.banner a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media (max-width: 767px) {
+  .banner {
+    flex-direction: column;
+    align-items: stretch;
+    bottom: calc(84px + env(safe-area-inset-bottom));
+  }
+}

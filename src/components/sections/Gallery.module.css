@@ -1,0 +1,126 @@
+.section {
+  padding: var(--section-y) 0;
+}
+.filterRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding-bottom: 20px;
+  margin-bottom: 36px;
+  border-bottom: 1px solid var(--c-line-wine);
+  font-size: var(--fs-caption);
+  letter-spacing: var(--ls-caps);
+  text-transform: uppercase;
+  color: var(--c-on-wine-muted);
+}
+.filterLabel em {
+  font-style: normal;
+  color: var(--c-rose);
+}
+.clear {
+  color: var(--c-cream);
+  letter-spacing: inherit;
+  text-transform: inherit;
+  font-size: inherit;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 48px) clamp(16px, 2.5vw, 40px);
+}
+/* асимметрия: средняя колонка смещена вниз (редакционная раскладка) */
+.pos1 {
+  transform: translateY(48px);
+}
+.card {
+  position: relative;
+}
+.cardButton {
+  display: grid;
+  gap: 14px;
+  width: 100%;
+  text-align: left;
+}
+.media {
+  position: relative;
+  display: block;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+.media img {
+  transition: transform 1.2s var(--ease-out);
+}
+.hover {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.7s var(--ease);
+}
+@media (hover: hover) {
+  .cardButton:hover .media img {
+    transform: scale(1.05);
+  }
+  .cardButton:hover .hover {
+    opacity: 1;
+  }
+}
+.index {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-family: var(--f-serif);
+  font-size: 1.3rem;
+  color: var(--c-rose);
+  opacity: 0.9;
+}
+.body {
+  display: grid;
+  gap: 4px;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+.name {
+  font-family: var(--f-serif);
+  font-size: 1.5rem;
+  line-height: 1.1;
+}
+.price {
+  font-family: var(--f-serif);
+  font-size: 1.05rem;
+  white-space: nowrap;
+  color: var(--c-rose);
+}
+.composition {
+  font-size: var(--fs-small);
+  color: var(--c-on-wine-muted);
+}
+.empty {
+  padding: 40px 0;
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-size: 1.3rem;
+}
+@media (max-width: 767px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 14px;
+  }
+  .pos1 {
+    transform: none;
+  }
+  .name {
+    font-size: 1.2rem;
+  }
+  .price {
+    font-size: 0.95rem;
+  }
+  .composition {
+    font-size: 0.78rem;
+  }
+}
